@@ -1,0 +1,58 @@
+\documentclass[
+  french,
+  a4paper,
+  sdaps_style=qr,   % qr or code128
+  checkmode= check
+]{sdapsclassic}
+
+\ExplSyntaxOn
+\bool_gset_false:N \g_sdaps_draft_bool % removes "DRAFT" watermark
+\ExplSyntaxOff
+
+\title{PANAS-SF (échelle à 10 points)}
+\author{}
+\date{}
+
+\begin{document}
+\begin{questionnaire}[noinfo]
+\section{Consignes}
+    \begin{info}
+        \sdapsinfo
+    \end{info}
+
+\section{Identification}
+    \begin{center}
+        \begin{tabular}{|p{8.8cm}|p{8.8cm}|}
+        \hline
+        Nom ou numéro d'identification du participant &
+        \makebox[8cm]{}
+        \\ \hline
+        Date &
+        \makebox[8cm]{}
+        \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{-1.2em}
+
+\section{Échelle}
+    \begin{optiongroup}[align=likert,colsep=10pt,rowsep=8pt]{}
+      \choice[val=1]{Très peu ou pas du tout}
+      \choice[val=2]{Un peu}
+      \choice[val=3]{Moyennement}
+      \choice[val=4]{Beaucoup}
+      \choice[val=5]{Énormément}
+    
+      \question[var=bouleverse]{\textbf{Bouleversé(e)}}
+      \question[var=hostile]{\textbf{Hostile}}
+      \question[var=vigilant]{\textbf{Vigilant(e)}}
+      \question[var=honteux]{\textbf{Honteux(se)}}
+      \question[var=inspire]{\textbf{Inspiré(e)}}
+      \question[var=nerveux]{\textbf{Nerveux(se)}}
+      \question[var=determine]{\textbf{Déterminé(e)}}
+      \question[var=attentif]{\textbf{Attentif}}
+      \question[var=apeure]{\textbf{Apeurée(e)}}
+      \question[var=actif]{\textbf{Actif(ve)}}
+    \end{optiongroup}
+
+\end{questionnaire}
+\end{document}
