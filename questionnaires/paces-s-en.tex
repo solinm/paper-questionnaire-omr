@@ -1,0 +1,80 @@
+\documentclass[
+  english,
+  a4paper,
+  sdaps_style=qr,
+  checkmode= check
+]{sdapsclassic}
+
+ % removes "DRAFT" watermark
+\ExplSyntaxOn
+\bool_gset_false:N \g_sdaps_draft_bool
+\ExplSyntaxOff
+
+\title{Physical Activity Enjoyment Scale (short form)}
+\author{}
+\date{}
+
+\begin{document}
+\begin{questionnaire}[noinfo]
+\section{Instructions}
+    \begin{info}
+        \sdapsinfo
+    \end{info}
+
+\section{Identification}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{13.7cm}|}
+        \hline
+        Participant Name or ID &
+        \makebox[8cm]{}
+        \\ \hline
+        Date &
+        \makebox[8cm]{}
+        \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{-1.2em}
+
+\section{Scale}
+Please rate how you feel at the moment about the activity (music and movement class) you have been doing.
+
+\begin{optionquestion}[cols=6,singlechoice]{I enjoy it}
+  \choiceitem{Strongly disagree}
+  \choiceitem{Disagree}
+  \choicemulticolitem{2}{Neither agree nor disagree}
+  \choiceitem{Agree}
+  \choiceitem{Strongly agree}
+\end{optionquestion}
+
+\rule{\linewidth}{1pt}
+
+\begin{optionquestion}[cols=6,singlechoice]{I find it pleasurable}
+  \choiceitem{Strongly disagree}
+  \choiceitem{Disagree}
+  \choicemulticolitem{2}{Neither agree nor disagree}
+  \choiceitem{Agree}
+  \choiceitem{Strongly agree}
+\end{optionquestion}
+
+\rule{\linewidth}{1pt}
+
+\begin{optionquestion}[cols=6,singlechoice]{It is very pleasant}
+  \choiceitem{Strongly disagree}
+  \choiceitem{Disagree}
+  \choicemulticolitem{2}{Neither agree nor disagree}
+  \choiceitem{Agree}
+  \choiceitem{Strongly agree}
+\end{optionquestion}
+
+\rule{\linewidth}{1pt}
+
+\begin{optionquestion}[cols=6,singlechoice]{It feels good}
+  \choiceitem{Strongly disagree}
+  \choiceitem{Disagree}
+  \choicemulticolitem{2}{Neither agree nor disagree}
+  \choiceitem{Agree}
+  \choiceitem{Strongly agree}
+\end{optionquestion}
+
+\end{questionnaire}
+\end{document}
