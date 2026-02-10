@@ -1,0 +1,62 @@
+\documentclass[
+  english,
+  a4paper,
+  sdaps_style=qr,
+  checkmode= check
+]{sdapsclassic}
+
+% removes "DRAFT" watermark
+\ExplSyntaxOn
+\bool_gset_false:N \g_sdaps_draft_bool 
+\ExplSyntaxOff
+
+\title{Geriatric Depression Scale (short form)}
+\author{}
+\date{}
+
+\begin{document}
+\begin{questionnaire}[noinfo]
+
+\section{Instructions}
+    \begin{info}
+        \sdapsinfo
+    \end{info}
+
+\section{Identification}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{13.7cm}|}
+        \hline
+        Participant Name or ID &
+        \makebox[8cm]{}
+        \\ \hline
+        Date &
+        \makebox[8cm]{}
+        \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{-1.2em}
+
+\section{Scale}
+Circle the answer that best describes how you felt over the \underline{past week}.
+    \begin{optiongroup}[colsep=5pt, rowsep=10pt]{}
+        \choice[val=1]{Yes}
+        \choice[val=0]{No}
+        
+        \question[var=gds01]{Are you basically satisfied with your life?}
+        \question[var=gds02]{Have you dropped many of your activities and interests?}
+        \question[var=gds03]{Do you feel that your life is empty?}
+        \question[var=gds04]{Do you often get bored?}
+        \question[var=gds05]{Are you in good spirits most of the time?}
+        \question[var=gds06]{Are you afraid that something bad is going to happen to you?}
+        \question[var=gds07]{Do you feel happy most of the time?}
+        \question[var=gds08]{Do you often feel helpless?}
+        \question[var=gds09]{Do you prefer to stay at home, rather than going out and doing new things?}
+        \question[var=gds10]{Do you feel that you have more problems with memory than most?}
+        \question[var=gds11]{Do you think it is wonderful to be alive now?}
+        \question[var=gds12]{Do you feel worthless the way you are now?}
+        \question[var=gds13]{Do you feel full of energy?}
+        \question[var=gds14]{Do you feel that your situation is hopeless?}
+        \question[var=gds15]{Do you think that most people are better off than you are?}
+    \end{optiongroup}
+\end{questionnaire}
+\end{document}
