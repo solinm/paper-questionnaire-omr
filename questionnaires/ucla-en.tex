@@ -1,0 +1,71 @@
+\documentclass[
+  english,
+  a4paper,
+  sdaps_style=qr,
+  checkmode= check
+]{sdapsclassic}
+
+ % removes "DRAFT" watermark
+\ExplSyntaxOn
+\bool_gset_false:N \g_sdaps_draft_bool
+\ExplSyntaxOff
+
+\title{UCLA 3-Item Loneliness Scale}
+\author{}
+\date{}
+
+\begin{document}
+\begin{questionnaire}[noinfo]
+\section{Instructions}
+    \begin{info}
+        \sdapsinfo
+    \end{info}
+
+\section{Identification}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{13.7cm}|}
+        \hline
+        Participant Name or ID &
+        \makebox[8cm]{}
+        \\ \hline
+        Date &
+        \makebox[8cm]{}
+        \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{-1.2em}
+
+\section{Scale}
+When answering the questions, you could take account of the following: 
+\begin{itemize}
+    \item There are no right or wrong answers
+    \item We would like you to be completely honest
+    \item In answering the questions it is best to think of your life as it generally is now \\(we all have some good or bad days)
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Questions}
+\begin{optionquestion}[cols=1, singlechoice]{How often do you feel that you lack companionship?}
+  \choiceitem{Hardly ever}
+  \choiceitem{Some of the time}
+  \choiceitem{Often}
+\end{optionquestion}
+
+\rule{\linewidth}{1pt}
+
+\begin{optionquestion}[cols=1, singlechoice]{How often do you feel left out?}
+  \choiceitem{Hardly ever}
+  \choiceitem{Some of the time}
+  \choiceitem{Often}
+\end{optionquestion}
+
+\rule{\linewidth}{1pt}
+
+\begin{optionquestion}[cols=1, singlechoice]{How often do you feel isolated from others?}
+  \choiceitem{Hardly ever}
+  \choiceitem{Some of the time}
+  \choiceitem{Often}
+\end{optionquestion}
+\end{questionnaire}
+\end{document}

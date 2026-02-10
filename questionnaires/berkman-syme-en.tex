@@ -1,0 +1,115 @@
+\documentclass[
+  english,
+  a4paper,
+  sdaps_style=qr,
+  checkmode= check
+]{sdapsclassic}
+
+ % removes "DRAFT" watermark
+\ExplSyntaxOn
+\bool_gset_false:N \g_sdaps_draft_bool
+\ExplSyntaxOff
+
+\title{Berkman-Syme Social Network Index}
+\author{}
+\date{}
+
+\begin{document}
+\begin{questionnaire}[noinfo]
+\section{Instructions}
+    \begin{info}
+        \sdapsinfo
+    \end{info}
+
+\section{Identification}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{13.7cm}|}
+        \hline
+        Participant Name or ID &
+        \makebox[8cm]{}
+        \\ \hline
+        Date &
+        \makebox[8cm]{}
+        \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{-1.2em}
+
+\section{Scale}
+The following questions are about your social interactions. Please read the following questions and select the response that most closely describes your \underline{current} situation.
+
+\textbf{Questions}
+\begin{optionquestion}[cols=2, singlechoice]{Which of these statements best represents your current relationship status?}
+  \choiceitem{Single}
+  \choiceitem{Married}
+  \choiceitem{In a civil union}
+  \choiceitem{Divorced}
+  \choiceitem{Separated}
+  \choiceitem{I prefer not to answer}
+\end{optionquestion}
+
+\begin{optionquestion}[cols=2, singlechoice]{In the past two weeks, how often have you communicated with family (e.g., parent, partner, child, cousin), friends, or neighbors (e.g., phone calls, video calls, text messages, social media)?}
+  \choiceitem{Less than once a week}
+  \choiceitem{1 to 2 times a week}
+  \choiceitem{3 to 4 times a week}
+  \choiceitem{5 or more times a week}
+  \choiceitem{I prefer not to answer}
+\end{optionquestion}
+
+\begin{optionquestion}[cols=2, singlechoice]{In the past two weeks, how often have you met up with or spent time with friends, family or relatives in person?}
+  \choiceitem{Less than once a week}
+  \choiceitem{1 to 2 times a week}
+  \choiceitem{3 to 4 times a week}
+  \choiceitem{5 or more times a week}
+  \choiceitem{I prefer not to answer}
+\end{optionquestion}
+
+\begin{optionquestion}[cols=1, singlechoice]{In the past two weeks, how often have you attended religious, spiritual, or philosophical activities (e.g., services, meditation sessions, Mass, parish activities, prayer groups.)?}
+  \begin{itemize}
+    \item In-person
+  \end{itemize}
+  
+  \choiceitem{Never}
+  \choiceitem{Once}
+  \choiceitem{Twice}
+  \choiceitem{Three or more times}
+  \choiceitem{I prefer not to answer}
+  
+  \choiceitem{Never} % might parse weird
+  
+  \begin{itemize}
+    \item Online
+  \end{itemize}
+  
+  \choiceitem{Once}
+  \choiceitem{Twice}
+  \choiceitem{Three or more times}
+  \choiceitem{I prefer not to answer}
+\end{optionquestion}
+
+\begin{optionquestion}[cols=1, singlechoice]{In the past two weeks, how often have you attended events or activities of any groups, clubs or organizations you
+belong to (e.g., hobby or sports groups, community activities, forums, clubs)?}
+  \begin{itemize}
+    \item In-person
+  \end{itemize}
+  
+  \choiceitem{Never or less than once a week}
+  \choiceitem{1 to 2 times a week}
+  \choiceitem{3 to 4 times a week}
+  \choiceitem{5 or more times a week}
+  \choiceitem{I prefer not to answer}
+  
+  \choiceitem{Never or less than once a week} % might parse weird
+  
+  \begin{itemize}
+    \item Online
+  \end{itemize}
+  
+  \choiceitem{1 to 2 times a week}
+  \choiceitem{3 to 4 times a week}
+  \choiceitem{5 or more times a week}
+  \choiceitem{I prefer not to answer}
+\end{optionquestion}
+
+\end{questionnaire}
+\end{document}
