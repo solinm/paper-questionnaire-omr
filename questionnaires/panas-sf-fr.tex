@@ -1,12 +1,19 @@
+% LuaLaTeX: SDAPS uses pdfTeX primitives; map them to LuaTeX equivalents
+% for this tex file, run with the following command:
+% sdaps setup tex panas panas-sf-fr.tex -e lualatex
+
+\ifdefined\directlua
+  \let\pdfsavepos\savepos
+  \let\pdflastxpos\lastxpos
+  \let\pdflastypos\lastypos
+\fi
+
 \documentclass[
   french,
   a4paper,
-  sdaps_style=qr,   % qr or code128
+  sdaps_style=qr,
   checkmode= check
 ]{sdapsclassic}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
 \ExplSyntaxOn
 \bool_gset_false:N \g_sdaps_draft_bool % removes "DRAFT" watermark
