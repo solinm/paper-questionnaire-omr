@@ -5,35 +5,34 @@
   checkmode= check
 ]{sdapsclassic}
 
- % removes "DRAFT" watermark
+
+% removes "DRAFT" watermark
 \ExplSyntaxOn
-\bool_gset_false:N \g_sdaps_draft_bool
+\bool_gset_false:N \g_sdaps_draft_bool 
 \ExplSyntaxOff
 
 \title{UCLA 3-Item Loneliness Scale}
 \author{}
 \date{}
 
+\setcounter{secnumdepth}{0}
+
 \begin{document}
 \begin{questionnaire}[noinfo]
-\section{Instructions}
-    \begin{info}
-        \sdapsinfo
-    \end{info}
+\addinfo{scale_id}{ucla}
+
+\section{Staff Use Only}
+    \textbox*[var=worker_id]{0.8cm}{ID:}
+    \textbox*[var=week]{0.8cm}{Week:}
+    \begin{optionquestion}[cols=3, var=timepoint]{Timepoint:}
+        \choiceitem{Pre}
+        \choiceitem{Baseline}
+        \choiceitem{Post}
+    \end{optionquestion}
 
 \section{Identification}
-    \begin{center}
-        \begin{tabular}{|p{4cm}|p{13.7cm}|}
-        \hline
-        Participant Name or ID &
-        \makebox[8cm]{}
-        \\ \hline
-        Date &
-        \makebox[8cm]{}
-        \\ \hline
-        \end{tabular}
-    \end{center}
-    \vspace{-1.2em}
+    \textbox*[var=participant_name]{0.8cm}{Name:}
+    \textbox*[var=date]{0.8cm}{Date:}
 
 \section{Scale}
 When answering the questions, you could take account of the following: 
@@ -46,7 +45,7 @@ When answering the questions, you could take account of the following:
 \vspace{0.5em}
 
 \textbf{Questions}
-\begin{optionquestion}[cols=1, singlechoice]{How often do you feel that you lack companionship?}
+\begin{optionquestion}[cols=1, singlechoice, var=How_often_do_you_feel_that_you_lack_companionship]{How often do you feel that you lack companionship?}
   \choiceitem{Hardly ever}
   \choiceitem{Some of the time}
   \choiceitem{Often}
@@ -54,7 +53,7 @@ When answering the questions, you could take account of the following:
 
 \rule{\linewidth}{1pt}
 
-\begin{optionquestion}[cols=1, singlechoice]{How often do you feel left out?}
+\begin{optionquestion}[cols=1, singlechoice, var=How_often_do_you_feel_left_out]{How often do you feel left out?}
   \choiceitem{Hardly ever}
   \choiceitem{Some of the time}
   \choiceitem{Often}
@@ -62,7 +61,7 @@ When answering the questions, you could take account of the following:
 
 \rule{\linewidth}{1pt}
 
-\begin{optionquestion}[cols=1, singlechoice]{How often do you feel isolated from others?}
+\begin{optionquestion}[cols=1, singlechoice, var=How_often_do_you_feel_isolated_from_others]{How often do you feel isolated from others?}
   \choiceitem{Hardly ever}
   \choiceitem{Some of the time}
   \choiceitem{Often}

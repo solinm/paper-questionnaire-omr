@@ -5,40 +5,41 @@
   checkmode= check
 ]{sdapsclassic}
 
- % removes "DRAFT" watermark
+
+% removes "DRAFT" watermark
 \ExplSyntaxOn
-\bool_gset_false:N \g_sdaps_draft_bool
+\bool_gset_false:N \g_sdaps_draft_bool 
 \ExplSyntaxOff
 
 \title{Physical Activity Enjoyment Scale (short form)}
 \author{}
 \date{}
 
+\setcounter{secnumdepth}{0}
+
 \begin{document}
 \begin{questionnaire}[noinfo]
-\section{Instructions}
-    \begin{info}
-        \sdapsinfo
-    \end{info}
+\addinfo{scale_id}{paces_s}
+
+\section{Staff Use Only}
+    \textbox*[var=worker_id]{0.8cm}{ID:}
+    \textbox*[var=week]{0.8cm}{Week:}
+    \begin{optionquestion}[cols=3, var=timepoint]{Timepoint:}
+        \choiceitem{Pre}
+        \choiceitem{Baseline}
+        \choiceitem{Post}
+    \end{optionquestion}
 
 \section{Identification}
-    \begin{center}
-        \begin{tabular}{|p{4cm}|p{13.7cm}|}
-        \hline
-        Participant Name or ID &
-        \makebox[8cm]{}
-        \\ \hline
-        Date &
-        \makebox[8cm]{}
-        \\ \hline
-        \end{tabular}
-    \end{center}
-    \vspace{-1.2em}
+    \textbox*[var=participant_name]{0.8cm}{Name:}
+    \textbox*[var=date]{0.8cm}{Date:}
 
 \section{Scale}
 Please rate how you feel at the moment about the activity (music and movement class) you have been doing.
 
-\begin{optionquestion}[cols=6,singlechoice]{I enjoy it}
+\vspace{3mm}
+
+\begin{optionquestion}[cols=6,singlechoice,var=I_enjoy_it]{I enjoy it}
   \choiceitem{Strongly disagree}
   \choiceitem{Disagree}
   \choicemulticolitem{2}{Neither agree nor disagree}
@@ -48,7 +49,7 @@ Please rate how you feel at the moment about the activity (music and movement cl
 
 \rule{\linewidth}{1pt}
 
-\begin{optionquestion}[cols=6,singlechoice]{I find it pleasurable}
+\begin{optionquestion}[cols=6,singlechoice,var=I_find_it_pleasurable]{I find it pleasurable}
   \choiceitem{Strongly disagree}
   \choiceitem{Disagree}
   \choicemulticolitem{2}{Neither agree nor disagree}
@@ -58,7 +59,7 @@ Please rate how you feel at the moment about the activity (music and movement cl
 
 \rule{\linewidth}{1pt}
 
-\begin{optionquestion}[cols=6,singlechoice]{It is very pleasant}
+\begin{optionquestion}[cols=6,singlechoice,var=It_is_very_pleasant]{It is very pleasant}
   \choiceitem{Strongly disagree}
   \choiceitem{Disagree}
   \choicemulticolitem{2}{Neither agree nor disagree}
@@ -68,7 +69,7 @@ Please rate how you feel at the moment about the activity (music and movement cl
 
 \rule{\linewidth}{1pt}
 
-\begin{optionquestion}[cols=6,singlechoice]{It feels good}
+\begin{optionquestion}[cols=6,singlechoice,var=It_feels_good]{It feels good}
   \choiceitem{Strongly disagree}
   \choiceitem{Disagree}
   \choicemulticolitem{2}{Neither agree nor disagree}
