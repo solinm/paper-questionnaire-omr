@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDAPS Web GUI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Topbar ── -->
+<div id="topbar">
+  <span class="logo">SDAPS</span>
+  <div class="sep"></div>
+  <select id="project-select" onchange="loadProject()" style="min-width:150px">
+    <option value="">— select project —</option>
+  </select>
+  <div class="sep"></div>
+  <button class="btn" onclick="navigate(-1)">&#8592;</button>
+  <span id="sheet-counter">— / —</span>
+  <button class="btn" onclick="navigate(1)">&#8594;</button>
+  <div class="sep"></div>
+  <button class="btn" onclick="adjustZoom(-0.15)">−</button>
+  <span id="zoom-label" style="font-size:11px;color:var(--muted);min-width:34px;text-align:center">100%</span>
+  <button class="btn" onclick="adjustZoom(0.15)">+</button>
+  <div class="sep"></div>
+  <span id="global-badge" class="badge badge-neutral">no project</span>
+  <div style="flex:1"></div>
+  <button class="btn accent" id="save-btn" onclick="saveChanges()" disabled>Save</button>
+  <button class="btn" onclick="togglePipeline()" id="pipeline-btn" style="opacity:.4" disabled>Pipeline</button>
+</div>
+
+<!-- ── Main ── -->
+<div id="main">
+
+  <!-- Sheet pane -->
+  <div id="sheet-pane">
+    <div class="placeholder-msg">Select a project to begin</div>
+  </div>
+
+  <!-- Right panel -->
+  <div id="right-panel">
+
+    <!-- Global properties -->
+    <div id="global-props">
+      <div class="section-label">Global properties</div>
+      <div class="prop-row">
+        <span class="prop-name">Sheet valid</span>
+        <div class="pill-group">
+          <span class="pill" id="pill-valid"   onclick="toggleValid(true)">Yes</span>
+          <span class="pill" id="pill-invalid" onclick="toggleValid(false)">No</span>
+        </div>
+      </div>
+      <div class="prop-row">
+        <span class="prop-name">Verified</span>
+        <div class="pill-group">
+          <span class="pill" id="pill-verified"   onclick="toggleVerified(true)">Yes</span>
+          <span class="pill" id="pill-unverified" onclick="toggleVerified(false)">No</span>
+        </div>
+      </div>
+      <div class="meta-id" id="qid-label">Questionnaire ID: —</div>
+    </div>
+
+    <!-- Review comment -->
+    <div id="review-section">
+      <div class="section-label" style="margin-bottom:5px">Sheet review comment</div>
+      <textarea id="review-comment" placeholder="Optional notes for this sheet…" oninput="markDirty()"></textarea>
+    </div>
+
+    <!-- Question list -->
+    <div id="qlist">
+      <div class="placeholder-msg">No project loaded</div>
+    </div>
+
+  </div><!-- /right-panel -->
+</div><!-- /main -->
+
+<!-- ── Pipeline drawer ── -->
+<div id="pipeline-drawer">
+  <div id="pipeline-drawer-head">
+    <span>Pipeline</span>
+    <button id="pipeline-close" onclick="togglePipeline()">&#x2715;</button>
+  </div>
+  <div id="pipeline-body">
+
+    <div class="pipeline-section">
+      <div class="pipeline-section-label">1. Run pipeline</div>
+      <div class="pipeline-btn-row">
+        <button class="btn green" id="run-btn" onclick="runPipeline()">Recognize + Export</button>
+        <button class="btn"       id="rec-btn" onclick="runRecognize()">Recognize only</button>
+      </div>
+    </div>
+
+    <div id="pipeline-log"></div>
+
+    <div class="pipeline-section">
+      <div class="pipeline-section-label">2. Reload sheets after pipeline</div>
+      <button class="btn" style="width:100%;justify-content:center" onclick="reloadAfterPipeline()">Reload project</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Status bar ── -->
+<div id="statusbar">
+  <span id="dirty-dot"></span>
+  <span id="dirty-label">Unsaved changes</span>
+  <span id="status-msg">Ready</span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
