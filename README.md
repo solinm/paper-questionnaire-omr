@@ -1,4 +1,4 @@
-# SDAPS Pipeline
+# Automatic Scoring of Paper-Based Questionnaires
 
 An automated pipeline for processing paper-based questionnaires using SDAPS (Scripts for Data Acquisition with Paper-based Surveys). Scanned questionnaire images are synced from Dropbox via rclone, OCR-sorted into the correct SDAPS project, processed for optical mark recognition, and exported as CSV and JSON.
 
