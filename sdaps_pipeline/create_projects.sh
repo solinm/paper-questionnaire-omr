@@ -14,7 +14,7 @@ for tex in "$TEX_DIR"/*.tex; do
 
     if [ ! -d "projects/$project" ]; then
         echo "Creating project for $project"
-        cd projects && sdaps setup tex "$project" "../$tex"
+        cd projects && ~/GitHub/sdaps/sdaps.py setup tex "$project" "../$tex"
         cd ..
     else
         echo "Project for $project already exists, skipping."
